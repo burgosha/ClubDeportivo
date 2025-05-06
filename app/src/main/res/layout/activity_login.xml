@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_inicio">
 
+
+
     <!-- Botón volver (flecha) -->
     <ImageButton
         android:id="@+id/btnBack"
@@ -26,6 +28,13 @@
         android:paddingEnd="24dp"
         android:paddingTop="32dp"
         android:paddingBottom="32dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo_club"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="Logo del Club" />
 
         <TextView
             android:layout_width="wrap_content"
