@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_inicio"
+    android:padding="24dp">
+
+    <!-- Logo del Club -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo_club"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/logo_club" />
+
+    <!-- Título del Club -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLUB DEPORTIVO\nIFTS 29"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Botón 1: Clientes -->
+    <Button
+        android:id="@+id/btnClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#1D1D6B"
+        android:elevation="6dp"
+        android:text="Clientes"
+        android:textColor="#FFFFFF" />
+
+    <!-- Botón 2: Cuota y pagos -->
+    <Button
+        android:id="@+id/btnCuotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cuota y pagos"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2A2A70"
+        android:elevation="6dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button" />
+
+    <!-- Botón 3: Actividades y rutinas -->
+    <Button
+        android:id="@+id/btnActividades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#2A2A70"
+        android:elevation="6dp"
+        android:text="Actividades y rutinas"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
