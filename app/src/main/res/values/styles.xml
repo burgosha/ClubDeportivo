@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BlueButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#2762BC</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:elevation">15dp</item>
+    </style>
+</resources>
