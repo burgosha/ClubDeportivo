@@ -31,12 +31,12 @@
         android:id="@+id/btnClientes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Clientes"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#2A2A70"
-        android:elevation="6dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_button" />
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#1D1D6B"
+        android:elevation="6dp"
+        android:text="Clientes"
+        android:textColor="#FFFFFF" />
 
     <!-- Botón 2: Cuota y pagos -->
     <Button
