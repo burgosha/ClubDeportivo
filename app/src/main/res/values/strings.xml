@@ -15,4 +15,12 @@
     <string name="cobro_cuotas_resumen">Resumen de pago</string>
     <string name="cobro_cuotas_resumen_detalle">Método de pago\nDatos tarjeta / Cuotas: xx\nFecha</string>
     <string name="cobro_cuotas_cobrar">Cobrar</string>
+    <string name="clientes_titulo">Clientes</string>
+    <string name="clientes_buscar_hint">Buscar cliente</string>
+    <string name="clientes_filtrar">Filtrar</string>
+    <string name="clientes_agregar">Agregar cliente</string>
+    <string name="clientes_avatar">Avatar del cliente</string>
+    <string name="clientes_nombre_ejemplo">Apellido, Nombre</string>
+    <string name="clientes_estado_socio">Socio</string>
+    <string name="clientes_estado_no_socio">No Socio</string>
 </resources>
