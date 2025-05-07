@@ -7,4 +7,12 @@
     <string name="ingresar">INGRESAR</string>
     <string name="volver">Volver</string>
     <string name="logo_club">Logo del club</string>
+    <string name="cobro_cuotas_titulo">Cobro&#10;Cuotas</string>
+    <string name="cobro_cuotas_socio">Socio</string>
+    <string name="cobro_cuotas_monto">Monto</string>
+    <string name="cobro_cuotas_monto_valor_inicial">$0,00</string>
+    <string name="cobro_cuotas_metodo_pago">Método de pago</string>
+    <string name="cobro_cuotas_resumen">Resumen de pago</string>
+    <string name="cobro_cuotas_resumen_detalle">Método de pago\nDatos tarjeta / Cuotas: xx\nFecha</string>
+    <string name="cobro_cuotas_cobrar">Cobrar</string>
 </resources>
