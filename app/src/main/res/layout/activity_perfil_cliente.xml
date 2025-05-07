@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_clientes_header">
+
+    <!-- Header azul con datos principales -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Botón de retroceso alineado a la izquierda -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/volver"
+                android:src="@drawable/ic_arrow_back" />
+        </LinearLayout>
+
+        <!-- Avatar -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/clientes_avatar"
+            android:src="@drawable/placeholder_user" />
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/perfil_nombre"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- Socio / No Socio -->
+        <TextView
+            android:id="@+id/tvSocio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/perfil_socio"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Estado -->
+        <TextView
+            android:id="@+id/tvEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/perfil_estado"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Botón Carnet Digital (dentro del header, centrado) -->
+        <Button
+            android:id="@+id/btnCarnetDigital"
+            style="@style/BlueButton"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:elevation="8dp"
+            android:minWidth="120dp"
+            android:minHeight="52dp"
+            android:text="@string/perfil_carnet_digital"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+    <!-- Contenedor blanco principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:layout_marginTop="-32dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_contenedor_blanco_arriba_redondeado"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título y botones de actividades -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/perfil_actividades"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#2762BC"
+                    android:background="@android:color/transparent"
+                    android:backgroundTintMode="src_in"
+                    android:elevation="4dp"
+                    android:clipToOutline="true" />
+                <TextView
+                    android:id="@+id/btnQuitarActividad"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/circle_blue"
+                    android:text="@string/perfil_btn_menos"
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:fontFamily="monospace"
+                    android:padding="0dp"
+                    android:layout_marginEnd="8dp"/>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#2762BC"
+                    android:background="@android:color/transparent"
+                    android:backgroundTintMode="src_in"
+                    android:elevation="4dp"
+                    android:clipToOutline="true" />
+                <TextView
+                    android:id="@+id/btnAgregarActividad"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/circle_blue"
+                    android:text="@string/perfil_btn_mas"
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:fontFamily="monospace"
+                    android:padding="0dp"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Lista de actividades con scroll -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Card de actividad ejemplo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:background="#5B8EE6"
+                    android:backgroundTint="#5B8EE6"
+                    android:backgroundTintMode="src_in"
+                    android:clipToOutline="true"
+                    android:elevation="2dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:radius="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perfil_actividad_futbol"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perfil_actividad_futbol_dias"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perfil_actividad_futbol_horario"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <!-- Card de actividad Natación -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:background="#5B8EE6"
+                    android:backgroundTint="#5B8EE6"
+                    android:backgroundTintMode="src_in"
+                    android:clipToOutline="true"
+                    android:elevation="2dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:radius="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Natación"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lunes y Miércoles"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20.00 - 21.00"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <!-- Card de actividad Tenis -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:background="#5B8EE6"
+                    android:backgroundTint="#5B8EE6"
+                    android:backgroundTintMode="src_in"
+                    android:clipToOutline="true"
+                    android:elevation="2dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:radius="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tenis"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Viernes"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16.00 - 18.00"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout> 

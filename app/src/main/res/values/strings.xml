@@ -23,4 +23,16 @@
     <string name="clientes_nombre_ejemplo">Apellido, Nombre</string>
     <string name="clientes_estado_socio">Socio</string>
     <string name="clientes_estado_no_socio">No Socio</string>
+    <string name="perfil_nombre">Apellido, Nombre</string>
+    <string name="perfil_socio">Socio / No Socio</string>
+    <string name="perfil_estado">Estado: Activo</string>
+    <string name="perfil_carnet_digital">Carnet Digital</string>
+    <string name="perfil_actividades">Actividades</string>
+    <string name="perfil_quitar_actividad">Quitar actividad</string>
+    <string name="perfil_agregar_actividad">Agregar actividad</string>
+    <string name="perfil_actividad_futbol">Futbol</string>
+    <string name="perfil_actividad_futbol_dias">Martes y Jueves</string>
+    <string name="perfil_actividad_futbol_horario">18.00 - 19.00</string>
+    <string name="perfil_btn_mas">+</string>
+    <string name="perfil_btn_menos">-</string>
 </resources>
