@@ -87,7 +87,7 @@
             android:id="@+id/btnIngresar"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:text="INGRESAR"
+            android:text="@string/ingresar"
             android:backgroundTint="#2A2A70"
             android:textColor="#FFFFFF"
             android:textStyle="bold"

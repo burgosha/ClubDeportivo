@@ -1,4 +1,10 @@
 <resources>
+    <string name="login_button_text">INICIAR SESIÓN</string>
+    <string name="login_text_welcome">BIENVENIDOS</string>
+    <string name="login_text_clubtitle">CLUB DEPORTIVO</string>
+    <string name="login_text_ifts29">IFTS 29</string>
+    <string name="login_text_noaccount">¿No tenés cuenta?</string>
+    <string name="login_button_register_text">REGISTRARSE</string>
     <string name="app_name">Club Deportivo</string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
     <string name="correo_electronico">Correo electrónico</string>
