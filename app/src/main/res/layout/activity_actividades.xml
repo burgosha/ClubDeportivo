@@ -64,18 +64,18 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Martes y Jueves"
-                    android:textColor="#FFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"/>
+                    android:layout_marginTop="4dp"
+                    android:text="Martes y Jueves"
+                    android:textColor="#FFFFFF" />
 
                 <TextView
-                    android:text="17.00 - 18.00 – 19.00 – 20.00 – 21.00"
-                    android:textColor="#FFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"/>
+                    android:layout_marginTop="4dp"
+                    android:text="17.00 - 18.00 – 19.00 – 20.00 – 21.00"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
             <!-- Copia y personaliza esto para otras actividades -->
