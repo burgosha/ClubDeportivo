@@ -62,4 +62,12 @@
         <item>Tarjeta</item>
         <item>Transferencia</item>
     </string-array>
+    <string name="historial_pagos_titulo">Historial de Pagos</string>
+    <string name="historial_pagos_buscar_hint">Buscar cliente</string>
+    <string name="historial_pagos_filtrar">Filtrar</string>
+    <string name="historial_pagos_fecha">Fecha</string>
+    <string name="historial_pagos_nombre">Apellido, Nombre</string>
+    <string name="historial_pagos_socio">Socio/No Socio</string>
+    <string name="historial_pagos_concepto">Concepto (Cuota/Actividad)</string>
+    <string name="historial_pagos_monto">$0,00</string>
 </resources>
