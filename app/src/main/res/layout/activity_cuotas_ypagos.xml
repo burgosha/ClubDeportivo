@@ -18,40 +18,47 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Historial de pagos"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="618dp" />
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="628dp" />
 
     <Button
         android:id="@+id/button2"
+        style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cobro actividades"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="546dp" />
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="552dp" />
 
     <Button
         android:id="@+id/button3"
+        style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cobro cuotas"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="473dp" />
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="478dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cuotas y pagos"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="209dp" />
+        android:text="Cuotas y Pagos"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="208dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
         app:srcCompat="@drawable/ic_arrow_back"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="44dp" />

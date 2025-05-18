@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -60,14 +61,14 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:autofillHints="search"
-                android:background="#E6E6E6"
+                android:background="@drawable/search_box"
                 android:hint="@string/clientes_buscar_hint"
                 android:inputType="text"
                 android:maxWidth="220dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="@color/black"
-                android:textColorHint="#888888" />
+                android:textColorHint="#888888"/>
 
             <ImageButton
                 android:id="@+id/btnFiltrar"
@@ -104,7 +105,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="12dp"
-                android:background="#E6E6F6"
+                android:background="@drawable/clients_box"
                 android:backgroundTint="#E6E6F6"
                 android:backgroundTintMode="src_in"
                 android:clipToOutline="true"
@@ -117,6 +118,8 @@
                 <ImageView
                     android:layout_width="56dp"
                     android:layout_height="56dp"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#00FFFFFF"
                     android:contentDescription="@string/clientes_avatar"
                     android:src="@drawable/placeholder_user" />
 
@@ -150,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="12dp"
-                android:background="#E6E6F6"
+                android:background="@drawable/clients_box"
                 android:backgroundTint="#E6E6F6"
                 android:backgroundTintMode="src_in"
                 android:clipToOutline="true"
@@ -163,6 +166,8 @@
                 <ImageView
                     android:layout_width="56dp"
                     android:layout_height="56dp"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#00FFFFFF"
                     android:contentDescription="@string/clientes_avatar"
                     android:src="@drawable/placeholder_user" />
 

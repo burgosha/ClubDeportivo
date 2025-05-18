@@ -13,9 +13,6 @@
         android:theme="@style/Theme.ClubDeportivo"
         tools:targetApi="31">
         <activity
-            android:name=".aniadir_actividad"
-            android:exported="false" />
-        <activity
             android:name=".AgregarClientes"
             android:exported="false" />
         <activity
@@ -29,9 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".Main_Screen"
-            android:exported="false" />
-        <activity
-            android:name=".ScreemMain"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
