@@ -21,60 +21,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRO"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="233dp" />
+        android:textColor="#1F1387"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="242dp" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="#fff"
         android:ems="10"
         android:inputType="text"
         android:text="Nombre Completo"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Correo electronico"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="437dp" />
-
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Contraseña"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="525dp" />
-
-    <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Repetir contraseña"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="562dp" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="38dp"
-        android:layout_height="45dp"
-        app:srcCompat="@drawable/logo_candado"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="534dp" />
+        tools:layout_editor_absoluteY="353dp" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -82,20 +43,63 @@
         android:layout_height="46dp"
         app:srcCompat="@drawable/sihhhn_t_tulo"
         tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="408dp" />
+        tools:layout_editor_absoluteY="363dp" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Contraseña"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="480dp" />
+
+    <EditText
+        android:id="@+id/editTextText5"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Repetir contraseña"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="38dp"
+        android:layout_height="45dp"
+        app:srcCompat="@drawable/logo_candado"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="489dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Correo electronico"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="392dp" />
 
     <Button
         android:id="@+id/button4"
+        style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrarse"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="621dp" />
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="626dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="53dp"
         android:layout_height="48dp"
+        android:backgroundTint="#00FFFFFF"
         app:srcCompat="@drawable/ic_arrow_back"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="48dp" />

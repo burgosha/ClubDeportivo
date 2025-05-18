@@ -28,6 +28,7 @@
 
     <!-- Botón 1: Clientes -->
     <Button
+        style="@style/BlueButton"
         android:id="@+id/btnClientes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
 
     <!-- Botón 2: Cuota y pagos -->
     <Button
+        style="@style/BlueButton"
         android:id="@+id/btnCuotas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +54,7 @@
 
     <!-- Botón 3: Actividades y rutinas -->
     <Button
+        style="@style/BlueButton"
         android:id="@+id/btnActividades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
