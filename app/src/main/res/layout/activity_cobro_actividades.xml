@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_clientes_header">
+
+    <!-- Header azul -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="@string/volver" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/cobro_actividades_titulo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Contenedor blanco principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_contenedor_blanco_arriba_redondeado"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginTop="-8dp">
+
+        <!-- Título y Spinner No Socio -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cobro_actividades_no_socio"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+        <Spinner
+            android:id="@+id/spinnerNoSocio"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/cobro_actividades_no_socio_array"
+            android:prompt="@string/cobro_actividades_no_socio" />
+
+        <!-- Título y Spinner Actividad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cobro_actividades_actividad"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+        <Spinner
+            android:id="@+id/spinnerActividad"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/cobro_actividades_actividad_array"
+            android:prompt="@string/cobro_actividades_actividad" />
+
+        <!-- Línea divisoria -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#111111"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Monto -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cobro_actividades_monto"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp" />
+        <TextView
+            android:id="@+id/tvMonto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cobro_actividades_monto_valor_inicial"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Línea divisoria -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#111111"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Título y Spinner Método de pago -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cobro_actividades_metodo_pago"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+        <Spinner
+            android:id="@+id/spinnerMetodoPago"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/cobro_actividades_metodo_pago_array"
+            android:prompt="@string/cobro_actividades_metodo_pago" />
+
+        <!-- Resumen de pago -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="#5B8EE6"
+            android:backgroundTint="#5B8EE6"
+            android:backgroundTintMode="src_in"
+            android:clipToOutline="true"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:radius="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cobro_actividades_resumen"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvResumen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cobro_actividades_resumen_detalle"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Botón Cobrar -->
+        <Button
+            android:id="@+id/btnCobrar"
+            style="@style/BlueButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/cobro_actividades_cobrar" />
+    </LinearLayout>
+</LinearLayout> 
