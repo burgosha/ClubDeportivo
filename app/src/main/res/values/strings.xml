@@ -1,1 +1,73 @@
-<resources></resources>
+<resources>
+    <string name="app_name">Club Deportivo</string>
+    <string name="iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="olvidaste_credenciales">¿Olvidaste tus credenciales?</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="volver">Volver</string>
+    <string name="logo_club">Logo del club</string>
+    <string name="cobro_cuotas_titulo">Cobro&#10;Cuotas</string>
+    <string name="cobro_cuotas_socio">Socio</string>
+    <string name="cobro_cuotas_monto">Monto</string>
+    <string name="cobro_cuotas_monto_valor_inicial">$0,00</string>
+    <string name="cobro_cuotas_metodo_pago">Método de pago</string>
+    <string name="cobro_cuotas_resumen">Resumen de pago</string>
+    <string name="cobro_cuotas_resumen_detalle">Método de pago\nDatos tarjeta / Cuotas: xx\nFecha</string>
+    <string name="cobro_cuotas_cobrar">Cobrar</string>
+    <string name="clientes_titulo">Clientes</string>
+    <string name="clientes_buscar_hint">Buscar cliente</string>
+    <string name="clientes_filtrar">Filtrar</string>
+    <string name="clientes_agregar">Agregar cliente</string>
+    <string name="clientes_avatar">Avatar del cliente</string>
+    <string name="clientes_nombre_ejemplo">Apellido, Nombre</string>
+    <string name="clientes_estado_socio">Socio</string>
+    <string name="clientes_estado_no_socio">No Socio</string>
+    <string name="perfil_nombre">Apellido, Nombre</string>
+    <string name="perfil_socio">Socio / No Socio</string>
+    <string name="perfil_estado">Estado: Activo</string>
+    <string name="perfil_carnet_digital">Carnet Digital</string>
+    <string name="perfil_actividades">Actividades</string>
+    <string name="perfil_quitar_actividad">Quitar actividad</string>
+    <string name="perfil_agregar_actividad">Agregar actividad</string>
+    <string name="perfil_actividad_futbol">Futbol</string>
+    <string name="perfil_actividad_futbol_dias">Martes y Jueves</string>
+    <string name="perfil_actividad_futbol_horario">18.00 - 19.00</string>
+    <string name="perfil_btn_mas">+</string>
+    <string name="perfil_btn_menos">-</string>
+    <string name="cobro_actividades_titulo">Cobro&#10;Actividades</string>
+    <string name="cobro_actividades_no_socio">No Socio</string>
+    <string name="cobro_actividades_actividad">Actividad</string>
+    <string name="cobro_actividades_monto">Monto</string>
+    <string name="cobro_actividades_monto_valor_inicial">$0,00</string>
+    <string name="cobro_actividades_metodo_pago">Método de pago</string>
+    <string name="cobro_actividades_resumen">Resumen de pago</string>
+    <string name="cobro_actividades_resumen_detalle">Método de pago&#10;Datos tarjeta / Cuotas: xx&#10;Fecha</string>
+    <string name="cobro_actividades_cobrar">Cobrar</string>
+    <string-array name="cobro_actividades_no_socio_array">
+        <item>No Socio</item>
+        <item>Socio</item>
+        <item>No Socio</item>
+    </string-array>
+    <string-array name="cobro_actividades_actividad_array">
+        <item>Actividad</item>
+        <item>Fútbol</item>
+        <item>Voley</item>
+        <item>Natación</item>
+        <item>Tenis</item>
+    </string-array>
+    <string-array name="cobro_actividades_metodo_pago_array">
+        <item>Método de pago</item>
+        <item>Efectivo</item>
+        <item>Tarjeta</item>
+        <item>Transferencia</item>
+    </string-array>
+    <string name="historial_pagos_titulo">Historial de Pagos</string>
+    <string name="historial_pagos_buscar_hint">Buscar cliente</string>
+    <string name="historial_pagos_filtrar">Filtrar</string>
+    <string name="historial_pagos_fecha">Fecha</string>
+    <string name="historial_pagos_nombre">Apellido, Nombre</string>
+    <string name="historial_pagos_socio">Socio/No Socio</string>
+    <string name="historial_pagos_concepto">Concepto (Cuota/Actividad)</string>
+    <string name="historial_pagos_monto">$0,00</string>
+</resources>
