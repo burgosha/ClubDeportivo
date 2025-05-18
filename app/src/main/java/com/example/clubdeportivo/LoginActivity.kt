@@ -1,6 +1,9 @@
 package com.example.clubdeportivo
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +18,15 @@ class LoginActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val btnBack : ImageButton = findViewById(R.id.btnBack)
+        btnBack.setOnClickListener {
+            finish()
+        }
+        val btnIngresar : Button = findViewById(R.id.btnIngresar)
+        btnIngresar.setOnClickListener{
+            val intent = Intent(this, Main_Screen::class.java)
+            startActivity(intent)
         }
     }
 }

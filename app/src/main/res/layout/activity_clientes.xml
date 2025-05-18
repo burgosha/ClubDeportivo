@@ -98,6 +98,7 @@
 
             <!-- Item cliente ejemplo -->
             <LinearLayout
+                android:id="@+id/btnClienteLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -108,7 +109,6 @@
                 android:background="@drawable/clients_box"
                 android:backgroundTint="#E6E6F6"
                 android:backgroundTintMode="src_in"
-                android:clipToOutline="true"
                 android:elevation="2dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"

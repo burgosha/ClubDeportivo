@@ -21,6 +21,12 @@
         <activity
             android:name=".CuotasYPagos"
             android:exported="false" />
+        <activity android:name=".CobroActividades"
+            android:exported="false"/>
+        <activity android:name=".CobroCuotas"
+            android:exported="false"/>
+        <activity android:name=".HistorialDePagos"
+            android:exported="false"/>
         <activity
             android:name=".ActividadesActivity"
             android:exported="false" />
@@ -30,6 +36,12 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+        <activity android:name=".Clientes"
+            android:exported="false"/>
+        <activity android:name=".PerfilCliente"
+            android:exported="false"/>
+        <activity android:name=".CarnetDigital"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

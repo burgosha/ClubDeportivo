@@ -4,17 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Clientes : AppCompatActivity() {
+class PerfilCliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_clientes)
+        setContentView(R.layout.activity_perfil_cliente)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,14 +23,9 @@ class Clientes : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
-        val btnAgregarCliente : ImageButton = findViewById(R.id.btnAgregarCliente)
-        btnAgregarCliente.setOnClickListener{
-            val intent = Intent(this, AgregarClientes::class.java)
-            startActivity(intent)
-        }
-        val btnClienteLayout : LinearLayout = findViewById(R.id.btnClienteLayout)
-        btnClienteLayout.setOnClickListener{
-            val intent = Intent(this, PerfilCliente::class.java)
+        val btnCarnetDigital : Button = findViewById(R.id.btnCarnetDigital)
+        btnCarnetDigital.setOnClickListener{
+            val intent = Intent(this, CarnetDigital::class.java)
             startActivity(intent)
         }
     }

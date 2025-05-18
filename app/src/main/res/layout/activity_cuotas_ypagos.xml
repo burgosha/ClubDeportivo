@@ -12,55 +12,77 @@
         android:id="@+id/imageView"
         android:layout_width="98dp"
         android:layout_height="96dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="157dp"
         android:src="@drawable/logo_club"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="87dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnHistorialDePagos"
         style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="54dp"
         android:text="Historial de pagos"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="628dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCobroActividades" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCobroActividades"
         style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
         android:text="Cobro actividades"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="552dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCobroCuotas" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnCobroCuotas"
         style="@style/BlueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="56dp"
         android:text="Cobro cuotas"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="478dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="93dp"
         android:text="Cuotas y Pagos"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/ic_arrow_back"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="44dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
