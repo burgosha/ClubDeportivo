@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class LoginActivity : AppCompatActivity() {
+class CuotasYPagos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_cuotas_ypagos)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -23,9 +23,19 @@ class LoginActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
-        val btnIngresar : Button = findViewById(R.id.btnIngresar)
-        btnIngresar.setOnClickListener{
-            val intent = Intent(this, Main_Screen::class.java)
+        val btnCobroCuotas : Button = findViewById(R.id.btnCobroCuotas)
+        btnCobroCuotas.setOnClickListener{
+            val intent = Intent(this, CobroCuotas::class.java)
+            startActivity(intent)
+        }
+        val btnCobroActividades : Button = findViewById(R.id.btnCobroActividades)
+        btnCobroActividades.setOnClickListener{
+            val intent = Intent(this, CobroActividades::class.java)
+            startActivity(intent)
+        }
+        val btnHistorialDePagos : Button = findViewById(R.id.btnHistorialDePagos)
+        btnHistorialDePagos.setOnClickListener{
+            val intent = Intent(this, HistorialDePagos::class.java)
             startActivity(intent)
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -60,14 +61,14 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:autofillHints="search"
-                android:background="#E6E6E6"
+                android:background="@drawable/search_box"
                 android:hint="@string/clientes_buscar_hint"
                 android:inputType="text"
                 android:maxWidth="220dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:textColor="@color/black"
-                android:textColorHint="#888888" />
+                android:textColorHint="#888888"/>
 
             <ImageButton
                 android:id="@+id/btnFiltrar"
@@ -89,108 +90,11 @@
 
         </LinearLayout>
 
-        <!-- Lista de clientes (ejemplo, luego será un RecyclerView) -->
+        <!-- Lista de clientes dinámica -->
         <LinearLayout
+            android:id="@+id/listaClientesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Item cliente ejemplo -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="12dp"
-                android:background="#E6E6F6"
-                android:backgroundTint="#E6E6F6"
-                android:backgroundTintMode="src_in"
-                android:clipToOutline="true"
-                android:elevation="2dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:radius="16dp">
-
-                <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:contentDescription="@string/clientes_avatar"
-                    android:src="@drawable/placeholder_user" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_nombre_ejemplo"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_estado_socio"
-                        android:textColor="#444444"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Puedes duplicar el bloque anterior para más ejemplos -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="12dp"
-                android:background="#E6E6F6"
-                android:backgroundTint="#E6E6F6"
-                android:backgroundTintMode="src_in"
-                android:clipToOutline="true"
-                android:elevation="2dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:radius="16dp">
-
-                <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:contentDescription="@string/clientes_avatar"
-                    android:src="@drawable/placeholder_user" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_nombre_ejemplo"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_estado_no_socio"
-                        android:textColor="#444444"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Más ejemplos aquí... -->
-        </LinearLayout>
+            android:orientation="vertical" />
     </LinearLayout>
 </LinearLayout> 

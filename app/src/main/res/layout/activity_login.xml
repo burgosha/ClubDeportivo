@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_inicio">
@@ -8,15 +9,16 @@
 
 
     <!-- Botón volver (flecha) -->
+
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="4dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Volver"
         android:src="@drawable/ic_arrow_back"
-        app:tint="#2A2A70"
-        android:contentDescription="Volver" />
+        app:tint="#2A2A70" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,7 +55,7 @@
             android:inputType="textEmailAddress"
             android:autofillHints="emailAddress"
             android:gravity="center"
-            android:background="#D9D9D9"
+            android:background="@drawable/search_box"
             android:textColor="#111111"
             android:textColorHint="#444444"
             android:layout_marginBottom="16dp"
@@ -68,7 +70,7 @@
             android:inputType="textPassword"
             android:autofillHints="password"
             android:gravity="center"
-            android:background="#D9D9D9"
+            android:background="@drawable/search_box"
             android:textColor="#111111"
             android:textColorHint="#444444"
             android:layout_marginBottom="16dp"
@@ -84,10 +86,11 @@
             android:layout_marginBottom="32dp" />
 
         <Button
+            style="@style/BlueButton"
             android:id="@+id/btnIngresar"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:text="INGRESAR"
+            android:text="@string/ingresar"
             android:backgroundTint="#2A2A70"
             android:textColor="#FFFFFF"
             android:textStyle="bold"

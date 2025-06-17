@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
@@ -42,21 +43,21 @@
         android:id="@+id/cardCarnet"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:elevation="6dp"
-        android:clipToOutline="true"
-        android:backgroundTintMode="src_in"
-        android:backgroundTint="@android:color/white"
-        android:radius="18dp"
         android:layout_margin="32dp"
-        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        android:background="@android:color/white"
+        android:backgroundTint="@android:color/white"
+        android:backgroundTintMode="src_in"
+        android:clipToOutline="true"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:radius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="W,1.6:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintHeight_default="ratio"
-        app:layout_constraintDimensionRatio="W,1.6:1">
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintWidth_percent="0.9">
 
         <!-- Header azul con logo y nombre del club -->
         <LinearLayout
@@ -64,24 +65,26 @@
             android:layout_height="0dp"
             android:layout_weight="0.32"
             android:background="#2563B6"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/ivLogoClub"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/ic_launcher_foreground"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="12dp" />
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/logo_club" />
+
             <TextView
                 android:id="@+id/tvClubNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
                 android:text="CLUB DEPORTIVO IFTS29"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:fontFamily="sans-serif-black" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Cuerpo: datos del socio y avatar -->
