@@ -90,112 +90,11 @@
 
         </LinearLayout>
 
-        <!-- Lista de clientes (ejemplo, luego será un RecyclerView) -->
+        <!-- Lista de clientes dinámica -->
         <LinearLayout
+            android:id="@+id/listaClientesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Item cliente ejemplo -->
-            <LinearLayout
-                android:id="@+id/btnClienteLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/clients_box"
-                android:backgroundTint="#E6E6F6"
-                android:backgroundTintMode="src_in"
-                android:elevation="2dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:radius="16dp">
-
-                <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="#00FFFFFF"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/clientes_avatar"
-                    android:src="@drawable/placeholder_user" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_nombre_ejemplo"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_estado_socio"
-                        android:textColor="#444444"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Puedes duplicar el bloque anterior para más ejemplos -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/clients_box"
-                android:backgroundTint="#E6E6F6"
-                android:backgroundTintMode="src_in"
-                android:clipToOutline="true"
-                android:elevation="2dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:radius="16dp">
-
-                <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="#00FFFFFF"
-                    android:backgroundTint="#00FFFFFF"
-                    android:contentDescription="@string/clientes_avatar"
-                    android:src="@drawable/placeholder_user" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_nombre_ejemplo"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clientes_estado_no_socio"
-                        android:textColor="#444444"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Más ejemplos aquí... -->
-        </LinearLayout>
+            android:orientation="vertical" />
     </LinearLayout>
 </LinearLayout> 
