@@ -82,7 +82,7 @@
                 android:textSize="18sp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp" />
-            <TextView
+            <EditText
                 android:id="@+id/tvMonto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

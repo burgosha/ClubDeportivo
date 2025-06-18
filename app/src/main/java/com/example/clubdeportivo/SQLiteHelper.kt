@@ -31,6 +31,15 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                     "telefono TEXT, " +
                     "tipo TEXT)"
         )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS pagos (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "cliente_id INTEGER, " +
+                    "monto REAL, " +
+                    "metodo_pago TEXT, " +
+                    "fecha TEXT, " +
+                    "FOREIGN KEY(cliente_id) REFERENCES clientes(id))"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -85,4 +94,18 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db.close()
         return clientes
     }
+
+    fun insertarPago(clienteId: Int, monto: Double, metodoPago: String): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put("cliente_id", clienteId)
+            put("monto", monto)
+            put("metodo_pago", metodoPago)
+            put("fecha", System.currentTimeMillis())
+        }
+        val result = db.insert("pagos", null, values)
+        db.close()
+        return result != -1L
+    }
+
 } 
