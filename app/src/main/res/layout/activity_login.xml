@@ -51,7 +51,7 @@
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Correo electrónico"
+            android:hint="Usuario"
             android:inputType="textEmailAddress"
             android:autofillHints="emailAddress"
             android:gravity="center"
