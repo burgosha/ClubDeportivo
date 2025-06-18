@@ -29,6 +29,9 @@ class Clientes : AppCompatActivity() {
             val intent = Intent(this, AgregarClientes::class.java)
             startActivity(intent)
         }
+        val btnClienteLayout : LinearLayout = findViewById(R.id.btnClienteLayout)
+        btnClienteLayout.setOnClickListener{
+            val intent = Intent(this, PerfilCliente::class.java)
             startActivity(intent)
         }
     }
