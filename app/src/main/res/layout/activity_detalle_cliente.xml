@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_clientes_header">
+
+    <!-- Header azul -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/volver" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalle Cliente"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black" />
+    </LinearLayout>
+
+    <!-- Contenedor blanco principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-32dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_contenedor_blanco_arriba_redondeado"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nombre:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvNombre" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apellido:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvApellido" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fecha de Nac.:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvFechaNac" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DNI:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvDni" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dirección:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvDireccion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Teléfono:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvTelefono" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tipo:" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvTipo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Borrar cliente"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</LinearLayout> 
