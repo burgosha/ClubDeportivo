@@ -57,6 +57,21 @@
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tipo:" android:textStyle="bold"/>
         <TextView android:id="@+id/tvTipo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
 
+        <TextView
+            android:id="@+id/tvPagosTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagos realizados"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+        <LinearLayout
+            android:id="@+id/layoutPagosCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"/>
+
         <Button
             android:id="@+id/btnBorrar"
             android:layout_width="match_parent"

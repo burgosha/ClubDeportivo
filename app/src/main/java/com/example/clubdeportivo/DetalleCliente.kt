@@ -1,11 +1,18 @@
 package com.example.clubdeportivo
 
+import android.graphics.Typeface
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class DetalleCliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +28,7 @@ class DetalleCliente : AppCompatActivity() {
         val tvDireccion: TextView = findViewById(R.id.tvDireccion)
         val tvTelefono: TextView = findViewById(R.id.tvTelefono)
         val tvTipo: TextView = findViewById(R.id.tvTipo)
+        val layoutPagos: LinearLayout = findViewById(R.id.layoutPagosCliente)
 
         val id = intent.getIntExtra("id", -1)
         val nombre = intent.getStringExtra("nombre") ?: ""
@@ -48,6 +56,38 @@ class DetalleCliente : AppCompatActivity() {
                 db.close()
                 Toast.makeText(this, "Cliente borrado", Toast.LENGTH_SHORT).show()
                 finish()
+            }
+        }
+
+        val dbHelper = SQLiteHelper(this)
+        val pagos: List<Map<String, String>> = if (id != -1) dbHelper.obtenerPagosDeCliente(id) else emptyList()
+        if (pagos.isEmpty()) {
+            val tv = TextView(this)
+            tv.text = "No hay pagos registrados."
+            layoutPagos.addView(tv)
+        } else {
+            val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+            for (i in pagos.indices) {
+                val pago = pagos[i]
+                val fechaLegible = try {
+                    val fechaLong = pago["fecha"]?.toLongOrNull() ?: 0L
+                    sdf.format(Date(fechaLong))
+                } catch (e: Exception) {
+                    pago["fecha"] ?: ""
+                }
+                val tv = TextView(this)
+                tv.text = "Monto: $${pago["monto"]} - Método: ${pago["metodo_pago"]}\nFecha: $fechaLegible"
+                tv.setTypeface(null, Typeface.BOLD)
+                tv.textSize = 16f
+                val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                params.setMargins(0, 0, 0, 16)
+                tv.layoutParams = params
+                tv.setPadding(32, 24, 32, 24)
+                val drawable = GradientDrawable()
+                drawable.cornerRadius = 32f
+                drawable.setColor(0xFFE1BEE7.toInt())
+                tv.background = drawable
+                layoutPagos.addView(tv)
             }
         }
     }

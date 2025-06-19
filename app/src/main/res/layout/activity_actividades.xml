@@ -47,11 +47,13 @@
             android:layout_marginTop="24dp"
             android:orientation="vertical">
 
-            <!-- Tarjeta de actividad -->
+            <!-- Tarjeta de actividad Fútbol -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/rounded_button"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -59,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Futbol"
+                    android:text="Fútbol"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -75,15 +77,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="17.00 - 18.00 – 19.00 – 20.00 – 21.00"
+                    android:text="17.00 – 18.00 – 19.00 – 20.00 – 21.00"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            <!-- Copia y personaliza esto para otras actividades -->
+            <!-- Tarjeta de actividad Voley -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/rounded_button"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -111,7 +115,73 @@
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            <!-- Repetir para Natación y Tenis... -->
+            <!-- Tarjeta de actividad Natación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Natación"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Lunes y Miércoles"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="20.00 – 21.00"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Tarjeta de actividad Tenis -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_button"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tenis"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Viernes"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="18.00 – 19.00 – 20.00"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

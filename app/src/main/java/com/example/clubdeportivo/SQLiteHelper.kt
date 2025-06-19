@@ -108,4 +108,49 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         return result != -1L
     }
 
+    fun obtenerPagosConCliente(): List<Map<String, String>> {
+        val pagos = mutableListOf<Map<String, String>>() 
+        val db = readableDatabase
+        val query = "SELECT pagos.id, pagos.monto, pagos.metodo_pago, pagos.fecha, clientes.nombre, clientes.apellido, clientes.tipo FROM pagos INNER JOIN clientes ON pagos.cliente_id = clientes.id ORDER BY pagos.fecha DESC"
+        val cursor = db.rawQuery(query, null)
+        if (cursor.moveToFirst()) {
+            do {
+                val pago = mapOf(
+                    "id" to cursor.getInt(cursor.getColumnIndexOrThrow("id")).toString(),
+                    "monto" to cursor.getDouble(cursor.getColumnIndexOrThrow("monto")).toString(),
+                    "metodo_pago" to cursor.getString(cursor.getColumnIndexOrThrow("metodo_pago")),
+                    "fecha" to cursor.getString(cursor.getColumnIndexOrThrow("fecha")),
+                    "nombre" to cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                    "apellido" to cursor.getString(cursor.getColumnIndexOrThrow("apellido")),
+                    "tipo" to cursor.getString(cursor.getColumnIndexOrThrow("tipo"))
+                )
+                pagos.add(pago)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return pagos
+    }
+
+    fun obtenerPagosDeCliente(clienteId: Int): List<Map<String, String>> {
+        val pagos = mutableListOf<Map<String, String>>()
+        val db = readableDatabase
+        val query = "SELECT id, monto, metodo_pago, fecha FROM pagos WHERE cliente_id = ? ORDER BY fecha DESC"
+        val cursor = db.rawQuery(query, arrayOf(clienteId.toString()))
+        if (cursor.moveToFirst()) {
+            do {
+                val pago = mapOf(
+                    "id" to cursor.getInt(cursor.getColumnIndexOrThrow("id")).toString(),
+                    "monto" to cursor.getDouble(cursor.getColumnIndexOrThrow("monto")).toString(),
+                    "metodo_pago" to cursor.getString(cursor.getColumnIndexOrThrow("metodo_pago")),
+                    "fecha" to cursor.getString(cursor.getColumnIndexOrThrow("fecha"))
+                )
+                pagos.add(pago)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return pagos
+    }
+
 } 

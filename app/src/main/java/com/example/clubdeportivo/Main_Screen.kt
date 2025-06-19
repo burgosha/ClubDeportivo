@@ -28,13 +28,13 @@ class Main_Screen : AppCompatActivity() {
             val intent = Intent(this, Clientes::class.java)
             startActivity(intent)
         }
-        val btnCuotas : Button = findViewById(R.id.btnCuotas)
-        btnCuotas.setOnClickListener{
+        val btnCuotaYPagos : Button = findViewById(R.id.btnCuotaYPagos)
+        btnCuotaYPagos.setOnClickListener{
             val intent = Intent(this, CuotasYPagos::class.java)
             startActivity(intent)
         }
-        val btnActividades : Button = findViewById(R.id.btnActividades)
-        btnActividades.setOnClickListener{
+        val btnActividadesYRutinas : Button = findViewById(R.id.btnActividadesYRutinas)
+        btnActividadesYRutinas.setOnClickListener{
             val intent = Intent(this, ActividadesActivity::class.java)
             startActivity(intent)
         }
