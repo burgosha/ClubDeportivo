@@ -170,4 +170,38 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db.close()
         return pagos
     }
+
+    fun obtenerSociosConPagosVencidos(diasVencimiento: Int = 30): List<Map<String, String>> {
+        val resultado = mutableListOf<Map<String, String>>()
+        val db = readableDatabase
+
+        val tiempoLimite = System.currentTimeMillis() - diasVencimiento * 24 * 60 * 60 * 1000
+
+        val query = """
+        SELECT c.id, c.nombre, c.apellido, c.tipo, MAX(CAST(p.fecha AS INTEGER)) as ultima_fecha
+        FROM clientes c
+        LEFT JOIN pagos p ON c.id = p.cliente_id
+        WHERE c.tipo = 'Socio'
+        GROUP BY c.id
+        HAVING ultima_fecha IS NULL OR ultima_fecha < ?
+    """.trimIndent()
+
+        val cursor = db.rawQuery(query, arrayOf(tiempoLimite.toString()))
+        if (cursor.moveToFirst()) {
+            do {
+                val cliente = mapOf(
+                    "id" to cursor.getInt(cursor.getColumnIndexOrThrow("id")).toString(),
+                    "nombre" to cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                    "apellido" to cursor.getString(cursor.getColumnIndexOrThrow("apellido")),
+                    "tipo" to cursor.getString(cursor.getColumnIndexOrThrow("tipo")),
+                    "fecha" to (cursor.getString(cursor.getColumnIndexOrThrow("ultima_fecha")) ?: "Sin pagos")
+                )
+                resultado.add(cliente)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return resultado
+    }
+
 } 
