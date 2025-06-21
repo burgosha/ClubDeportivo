@@ -153,4 +153,56 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         return pagos
     }
 
+    fun insertarClientesYPagosPrueba() {
+        val db = writableDatabase
+
+        val clientes = listOf(
+            ContentValues().apply {
+                put("nombre", "Carlos")
+                put("apellido", "Gómez")
+                put("fecha_nac", "1990-01-01")
+                put("dni", "12345678")
+                put("direccion", "Av Siempreviva 123")
+                put("telefono", "123456789")
+                put("tipo", "Socio")
+            },
+            ContentValues().apply {
+                put("nombre", "Laura")
+                put("apellido", "Martínez")
+                put("fecha_nac", "1985-05-20")
+                put("dni", "23456789")
+                put("direccion", "Calle Falsa 456")
+                put("telefono", "987654321")
+                put("tipo", "Socio")
+            }
+        )
+
+        val clienteIds = mutableListOf<Int>()
+        for (cv in clientes) {
+            val id = db.insert("clientes", null, cv).toInt()
+            clienteIds.add(id)
+        }
+
+        val now = System.currentTimeMillis()
+        val hace40dias = now - 40L * 24 * 60 * 60 * 1000
+        val hace10dias = now - 10L * 24 * 60 * 60 * 1000
+
+
+        db.insert("pagos", null, ContentValues().apply {
+            put("cliente_id", clienteIds[0])
+            put("monto", 1000.0)
+            put("metodo_pago", "Efectivo")
+            put("fecha", hace40dias)
+        })
+
+
+        db.insert("pagos", null, ContentValues().apply {
+            put("cliente_id", clienteIds[1])
+            put("monto", 1000.0)
+            put("metodo_pago", "Tarjeta")
+            put("fecha", hace10dias)
+        })
+
+        db.close()
+    }
 } 
