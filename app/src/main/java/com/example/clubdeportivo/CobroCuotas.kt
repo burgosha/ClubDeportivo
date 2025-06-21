@@ -2,14 +2,7 @@ package com.example.clubdeportivo
 
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,10 +16,12 @@ class CobroCuotas : AppCompatActivity() {
     private lateinit var btnCobrar: Button
     private lateinit var dbHelper: SQLiteHelper
     private lateinit var socios: List<Cliente>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_cobro_cuotas)
+
         dbHelper = SQLiteHelper(this)
 
         spinnerSocio = findViewById(R.id.spinnerSocio)
@@ -37,45 +32,13 @@ class CobroCuotas : AppCompatActivity() {
 
         cargarSocios()
         configurarMetodoPago()
-
-        spinnerSocio.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                actualizarResumen()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {}
-        })
-
-        spinnerMetodoPago.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                actualizarResumen()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {}
-        })
+        configurarResumen()
 
         btnCobrar.setOnClickListener {
-            val socioSeleccionado = socios[spinnerSocio.selectedItemPosition]
-            val montoStr = tvMonto.text.toString().replace("$", "").replace(",", ".")
-            val metodoPago = spinnerMetodoPago.selectedItem.toString()
-
-            val monto = montoStr.toDoubleOrNull()
-            if (monto == null || monto <= 0) {
-                Toast.makeText(this, "Ingrese un monto válido", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            val exito = dbHelper.insertarPago(socioSeleccionado.id, monto, metodoPago)
-            if (exito) {
-                Toast.makeText(this, "Pago registrado exitosamente", Toast.LENGTH_SHORT).show()
-                finish()
-            } else {
-                Toast.makeText(this, "Error al registrar el pago", Toast.LENGTH_SHORT).show()
-            }
+            registrarPago()
         }
 
-        val btnBack: ImageButton = findViewById(R.id.btnBack)
-        btnBack.setOnClickListener {
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             finish()
         }
     }
@@ -83,6 +46,7 @@ class CobroCuotas : AppCompatActivity() {
     private fun cargarSocios() {
         socios = dbHelper.obtenerClientes().filter { it.tipo == "Socio" }
         val nombres = socios.map { "${it.apellido}, ${it.nombre}" }
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, nombres)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerSocio.adapter = adapter
@@ -95,13 +59,67 @@ class CobroCuotas : AppCompatActivity() {
         spinnerMetodoPago.adapter = adapter
     }
 
+    private fun configurarResumen() {
+        val listener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                actualizarResumen()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+
+        spinnerSocio.onItemSelectedListener = listener
+        spinnerMetodoPago.onItemSelectedListener = listener
+
+        tvMonto.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                actualizarResumen()
+            }
+        }
+    }
+
     private fun actualizarResumen() {
-        if (spinnerSocio.selectedItemPosition >= 0 && spinnerMetodoPago.selectedItemPosition >= 0) {
-            val socio = socios[spinnerSocio.selectedItemPosition]
-            val metodo = spinnerMetodoPago.selectedItem.toString()
-            val monto = tvMonto.text.toString()
-            val resumen = "Socio: ${socio.apellido}, ${socio.nombre}\nMonto: $monto\nMétodo: $metodo"
-            tvResumen.text = resumen
+        if (socios.isEmpty() || spinnerSocio.selectedItemPosition !in socios.indices) return
+        if (spinnerMetodoPago.selectedItem == null) return
+
+        val socio = socios[spinnerSocio.selectedItemPosition]
+        val metodo = spinnerMetodoPago.selectedItem.toString()
+        val monto = tvMonto.text.toString().ifBlank { "$0.00" }
+
+        val resumen = """
+            Socio: ${socio.apellido}, ${socio.nombre}
+            Monto: $monto
+            Método: $metodo
+        """.trimIndent()
+
+        tvResumen.text = resumen
+    }
+
+    private fun registrarPago() {
+        if (socios.isEmpty() || spinnerSocio.selectedItemPosition !in socios.indices) {
+            Toast.makeText(this, "Seleccione un socio válido", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val socio = socios[spinnerSocio.selectedItemPosition]
+        val metodo = spinnerMetodoPago.selectedItem?.toString() ?: ""
+        val montoTexto = tvMonto.text.toString()
+            .replace(",", ".")
+            .replace("$", "")
+            .trim()
+
+        val monto = montoTexto.toDoubleOrNull()
+        if (monto == null || monto <= 0.0) {
+            Toast.makeText(this, "Ingrese un monto válido", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val exito = dbHelper.insertarPago(socio.id, monto, metodo)
+        if (exito) {
+            Toast.makeText(this, "Pago registrado exitosamente", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            Toast.makeText(this, "Error al registrar el pago", Toast.LENGTH_SHORT).show()
         }
     }
 }
