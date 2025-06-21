@@ -31,7 +31,7 @@ class HistorialDePagos : AppCompatActivity() {
         }
 
         val dbHelper = SQLiteHelper(this)
-        dbHelper.insertarClientesYPagosPrueba()
+
         val pagos = dbHelper.obtenerPagosConCliente()
         val layout = findViewById<LinearLayout>(R.id.layoutPagos)
         layout.removeAllViews()
@@ -64,37 +64,6 @@ class HistorialDePagos : AppCompatActivity() {
                 tv.setTypeface(null, Typeface.BOLD)
                 tv.textSize = 16f
                 layout.addView(tv)
-            }
-        }
-        val btnVencido : ImageButton = findViewById(R.id.btnVencido)
-        btnVencido.setOnClickListener {
-            val vencidos = dbHelper.obtenerClientesConPagosVencidos()
-            layout.removeAllViews()
-            if (vencidos.isEmpty()) {
-                val tv = TextView(this)
-                tv.text = "No hay socios con pagos vencidos."
-                layout.addView(tv)
-            } else {
-                val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-                for (cliente in vencidos) {
-                    val nombre = "${cliente["apellido"]}, ${cliente["nombre"]} (${cliente["tipo"]})"
-                    val fechaLegible = cliente["fecha"]?.toLongOrNull()?.let { sdf.format(Date(it)) } ?: "Sin pagos"
-                    val detalle = "Último pago: $fechaLegible"
-                    val tv = TextView(this)
-                    tv.text = "$nombre\n$detalle"
-
-                    val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                    params.setMargins(0, 0, 0, 24)
-                    tv.layoutParams = params
-                    tv.setPadding(32, 24, 32, 24)
-                    val drawable = GradientDrawable()
-                    drawable.cornerRadius = 32f
-                    drawable.setColor(0xFFFFCDD2.toInt())
-                    tv.background = drawable
-                    tv.setTypeface(null, Typeface.BOLD)
-                    tv.textSize = 16f
-                    layout.addView(tv)
-                }
             }
         }
 

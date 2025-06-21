@@ -40,6 +40,24 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                     "fecha TEXT, " +
                     "FOREIGN KEY(cliente_id) REFERENCES clientes(id))"
         )
+
+        db.execSQL(
+            "INSERT INTO clientes (id, nombre, apellido, fecha_nac, dni, direccion, telefono, tipo) VALUES " +
+                    "(1, 'Carlos', 'Gómez', '1990-01-01', '12345678', 'Av Siempreviva 123', '123456789', 'Socio')," +
+                    "(2, 'Laura', 'Martínez', '1985-05-20', '23456789', 'Calle Falsa 456', '987654321', 'Socio')"
+        )
+
+
+        val ahora = System.currentTimeMillis()
+        val hace40dias = ahora - 40L * 24 * 60 * 60 * 1000
+        val hace10dias = ahora - 10L * 24 * 60 * 60 * 1000
+
+
+        db.execSQL(
+            "INSERT INTO pagos (cliente_id, monto, metodo_pago, fecha) VALUES " +
+                    "(1, 1000.0, 'Efectivo', '$hace40dias')," +
+                    "(2, 1000.0, 'Tarjeta', '$hace10dias')"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -151,90 +169,5 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         cursor.close()
         db.close()
         return pagos
-    }
-
-    fun insertarClientesYPagosPrueba() {
-        val db = writableDatabase
-
-        val clientes = listOf(
-            ContentValues().apply {
-                put("nombre", "Carlos")
-                put("apellido", "Gómez")
-                put("fecha_nac", "1990-01-01")
-                put("dni", "12345678")
-                put("direccion", "Av Siempreviva 123")
-                put("telefono", "123456789")
-                put("tipo", "Socio")
-            },
-            ContentValues().apply {
-                put("nombre", "Laura")
-                put("apellido", "Martínez")
-                put("fecha_nac", "1985-05-20")
-                put("dni", "23456789")
-                put("direccion", "Calle Falsa 456")
-                put("telefono", "987654321")
-                put("tipo", "Socio")
-            }
-        )
-
-        val clienteIds = mutableListOf<Int>()
-        for (cv in clientes) {
-            val id = db.insert("clientes", null, cv).toInt()
-            clienteIds.add(id)
-        }
-
-        val now = System.currentTimeMillis()
-        val hace40dias = now - 40L * 24 * 60 * 60 * 1000
-        val hace10dias = now - 10L * 24 * 60 * 60 * 1000
-
-
-        db.insert("pagos", null, ContentValues().apply {
-            put("cliente_id", clienteIds[0])
-            put("monto", 1000.0)
-            put("metodo_pago", "Efectivo")
-            put("fecha", hace40dias)
-        })
-
-
-        db.insert("pagos", null, ContentValues().apply {
-            put("cliente_id", clienteIds[1])
-            put("monto", 1000.0)
-            put("metodo_pago", "Tarjeta")
-            put("fecha", hace10dias)
-        })
-
-        db.close()
-    }
-    fun obtenerClientesConPagosVencidos(diasVencimiento: Int = 30): List<Map<String, String>> {
-        val resultado = mutableListOf<Map<String, String>>()
-        val db = readableDatabase
-
-        val tiempoLimite = System.currentTimeMillis() - diasVencimiento * 24L * 60 * 60 * 1000
-
-        val query = """
-        SELECT c.id, c.nombre, c.apellido, c.tipo, MAX(CAST(p.fecha AS INTEGER)) as ultima_fecha
-        FROM clientes c
-        LEFT JOIN pagos p ON c.id = p.cliente_id
-        WHERE c.tipo = 'Socio'
-        GROUP BY c.id
-        HAVING ultima_fecha IS NULL OR ultima_fecha < ?
-    """.trimIndent()
-
-        val cursor = db.rawQuery(query, arrayOf(tiempoLimite.toString()))
-        if (cursor.moveToFirst()) {
-            do {
-                val cliente = mapOf(
-                    "id" to cursor.getInt(cursor.getColumnIndexOrThrow("id")).toString(),
-                    "nombre" to cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                    "apellido" to cursor.getString(cursor.getColumnIndexOrThrow("apellido")),
-                    "tipo" to cursor.getString(cursor.getColumnIndexOrThrow("tipo")),
-                    "fecha" to (cursor.getString(cursor.getColumnIndexOrThrow("ultima_fecha")) ?: "Sin pagos")
-                )
-                resultado.add(cliente)
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-        db.close()
-        return resultado
     }
 } 
